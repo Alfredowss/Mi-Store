@@ -1,0 +1,9 @@
+.remove{
+    display: none;
+}
+
+.card-product-container:hover > .remove{
+    display: inline-block;
+    right: 0;
+    top: 0;
+}

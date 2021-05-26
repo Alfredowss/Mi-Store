@@ -1,0 +1,14 @@
+.add{
+    display: none;
+    right: 0;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.card-product-container:hover > .add{
+   display: inline-block;
+}
+
+.card-product-container{
+    cursor: pointer;
+}
