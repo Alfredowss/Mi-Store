@@ -9,12 +9,19 @@ import './index.css'
 export default function Car(){
 
     const history = useHistory();
-    const [state, dispatch] = useContext(Context)
+    //This syntax is for pass the Test
+    const context = useContext(Context)
+    const state = context[0];
+    const dispatch = context[1];
+
     const handleClick =(e)=>{
         dispatch({type: 'REMOVE_PRODUCT', payload: e})
     }
 
-    const [localState, setState] = useState({modalIsOpen: false})
+    //This syntax is for pass the Test
+    const Estado = useState({modalIsOpen: false})
+    const localState = Estado[0];
+    const setState = Estado[1];
 
     const handlerModal = ()=>{
         let a = (localState.modalIsOpen) ? false : true

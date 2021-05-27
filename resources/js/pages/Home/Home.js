@@ -4,6 +4,8 @@ import './index.css';
 import {Context} from '../../store/Store'
 import {data} from '../../store/FakeData'
 
+
+
 export default function Home(){
 
     const cmStyles= {
@@ -11,27 +13,31 @@ export default function Home(){
     }
 
     const image1= "https://i.pinimg.com/originals/84/ad/a4/84ada4bbb509bbc1e1bdaea876510e01.png";
-
-    const [state, dispatch] = useContext(Context);
+    
+    const context = useContext(Context);
+    const state = context[0];
+    const dispatch = context[1]
 
     const handleClick = (e)=>{
+        console.log(context)
         dispatch({type: "ADD_PRODUCT", payload: e})
     }
 
     return(
         <div className="container-fluid">
             <div className="row">
+
                  <div className="col p-0">
                     <ul className="list-inline text-center mx-auto py-4">
-                        <li style={cmStyles} className="fs-5 mx-3 list-inline-item">Nuevos</li>
-                        <li style={cmStyles} className="fs-5 mx-3 list-inline-item">Ofertas</li>
-                        <li style={cmStyles} className="fs-5 mx-3 list-inline-item">Hombres</li>
-                        <li style={cmStyles} className="fs-5 mx-3 list-inline-item">Mujeres</li>
-                        <li style={cmStyles} className="fs-5 mx-3 list-inline-item">About us</li>    
-                    </ul>
+                        <li style={{...cmStyles}} className="fs-5 mx-3 list-inline-item">Nuevos</li>
+                        <li style={{...cmStyles}} className="fs-5 mx-3 list-inline-item">Ofertas</li>
+                        <li style={{...cmStyles}} className="fs-5 mx-3 list-inline-item">Hombres</li>
+                        <li style={{...cmStyles}} className="fs-5 mx-3 list-inline-item">Mujeres</li>
+                        <li style={{...cmStyles}} className="fs-5 mx-3 list-inline-item">About us</li>    
+                    </ul>                    
                 </div>
             </div>
-            
+
             <div className="row pt-5">
                 <div className="col p-0">
                     <Card url={image1} 
@@ -50,6 +56,7 @@ export default function Home(){
                             backgroundPosition = "bottom center"
                         />
                     </div>
+
                     <div className="col p-0 pl-3">
                         <Card url={image1} 
                             height="200px"
