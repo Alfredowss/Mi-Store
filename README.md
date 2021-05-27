@@ -6,15 +6,22 @@ This Application is a basic template maked in React and Larave
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
 
 ```bash
-git clone git@github.com:Alfredowss/Mi-Store.git
-npm install --all
+Download ZIP 
+cd Mi-Store
 composer install
+npm install --all
+config your own .env file
 ```
 
 ## Usage
 
 ```
-    php artisan serve
+    //For run the application
+        php artisan serve
+        
+    
+    //For run test
+        npm test
 
 ```
 
